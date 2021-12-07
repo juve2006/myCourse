@@ -6,35 +6,29 @@
 <body>
 
 <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
-    Введіть імя, призвіще, по-батькові : <label>
+    Введіть призвіще, імя, по-батькові : <label>
         <input type="text" name="name">
     </label><br>
     <input type="submit">
 </form>
 <?php
-
-//   3. Напишіть скрипт, який використовує HTML-форму для введення прізвища імені
-    // та по-батькові користувача. Коли користувач надішле форму, скрипт повинен вивести ініціали.
-	//Скрипт повинен працювати коректно, якщо користувач введе декілька пробілів та пробіли
-    // на початку і в кінці. Ініціали повинні виводитися великими літерами, навіть,
-    // якщо користувач набрав малими.
 	if (!empty($_POST['name'])) {
-	    var_dump($_POST['name']);
-		echo "<hr>";
-	    $name = ltrim(ucwords(strtolower($_POST['name'])));
-	    echo "<hr>";
-		$spacePos= strpos(ltrim($name), ' ');
-		var_dump($spacePos);
-		echo "<hr>";
-		$surname = substr($name, 0, $spacePos );
-		//  IVANOV    ivan                  Ivanovich
-		echo "<hr>";
-		var_dump($surname);
-	
-	}
-	
-	
+	    $fullName = trim(ucwords(mb_strtolower($_POST['name'])));
+		$spacePos= mb_strpos($fullName, ' '); // шукаємо перший пробіл внутрішній
+		$surname = mb_substr($fullName, 0, $spacePos ); // вибираємо призвіще
+        $fullNameWithoutSurname=trim(mb_substr($fullName, $spacePos+1)); // імя побатькові
+        $spacePos2 = mb_strpos($fullNameWithoutSurname, ' '); // шукаємо пробіл між призвіщем і імям
+        $name= trim(mb_substr($fullNameWithoutSurname,0, $spacePos2)); // імя
+        $fatherName=trim(mb_substr($fullNameWithoutSurname, $spacePos2+1)); // по батькові
+        $initials = mb_strtoupper(mb_substr($surname,0,1)).". ".mb_strtoupper(mb_substr($name,0,1)).". ".mb_strtoupper(mb_substr($fatherName,0,1)).". ";
+        // так як ucwords/ucfirst не працює с кирилицею
+        echo "Тільки ініціали:          $initials";
+        echo "<hr>";
+        $firstLetter=mb_strtoupper(mb_substr($surname,0,1));
+        $initials2 = $firstLetter.mb_substr($surname, 1)." ".mb_strtoupper(mb_substr($name,0,1)).". ".mb_strtoupper(mb_substr($fatherName,0,1)).". ";
+        echo "Призвіще та  ініціали:          $initials2";
+        echo "<hr>";
+    }
 ?>
-
 </body>
 </html>
