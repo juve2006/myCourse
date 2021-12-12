@@ -1,2 +1,2 @@
-# tsg first lesson
+# tsg course PHP
 URL=https://github.com/juve2006/tsg
