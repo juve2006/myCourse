@@ -13,7 +13,7 @@
 </form>
 <?php
 	if (!empty($_POST['name'])) {
-	    $fullName = trim(ucwords(mb_strtolower($_POST['name'])));
+	    $fullName = trim(mb_strtolower($_POST['name']));
 		$spacePos= mb_strpos($fullName, ' '); // шукаємо перший пробіл внутрішній
 		$surname = mb_substr($fullName, 0, $spacePos ); // вибираємо призвіще
         $fullNameWithoutSurname=trim(mb_substr($fullName, $spacePos+1)); // імя побатькові
