@@ -6,11 +6,11 @@
 <body>
 
 <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
-	Введіть об'єм двигуна куб. см: <label>
-		<input  minlength="4" maxlength="4" type="number" name="engine">
+    Введіть об'єм двигуна куб. см: <label>
+		<input  type="number" name="engine">
 	</label><br>
 	Введіть рік випуску авто: <label>
-		<input minlength="4" maxlength="4" type="number" name="year">
+		<input  type="number" name="year">
 	</label><br>
 	Введіть вартість авто, євро: <label>
 		<input type="number" name="price">
@@ -18,26 +18,50 @@
 	Оберіть вид палива: <label>
 		<select name="fuel" id="fuel">
 			<option value="dis">Дизель</option>
-			<option value="benz">Бензин</option>
+			<option value="ben">Бензин</option>
 		</select>
 	</label><br>
 	<input type="submit">
 </form>
 <?php
-//ормула розрахунку акцизу на ввезення б/в авто визначається так:
-//Ставка (акцизу) = Ставка (базова) х К двигуна х К віку
-//де базова ставка – це ставка податку в євро за 1 штуку транспортного засобу:
-//Бензинові – 50,0 євро;
-//Дизель – 75,0 євро;
-//К двигуна – коефіцієнт, який визначається від ділення об’єму двигуна в куб. см на 1000 куб. см;
-//К віку – коефіцієнт, що дорівнює кількості повних календарних років (вважається з року, наступного після року випуску авто).
-//Для нових і вживаних не більше одного року ТЗ, коефіцієнт дорівнює 1).
-	$baseBenz = 50;
-	$baseDis= 70;
-		$fuel = $_POST['fuel'];
-		$engine=$_POST['engine'];
-		$price=$_POST['price'];
-		$fuel=$_POST['fuel'];
+$baseBenz = 50;
+$baseDis= 70;
+$currentYear=date ( "Y");
+
+if(!empty( $_POST['fuel'])) {
+    $fuel = $_POST['fuel'];
+}
+
+if(!empty( $_POST['year'])) {
+    $year = $_POST['year'];
+    }
+
+if($currentYear-$year<=1){
+    $kYear=1;
+} else {
+    $kYear=$currentYear-$year-1;
+}
+
+if(!empty( $_POST['engine'])) {
+    $engine=$_POST['engine'];
+    $kEngine=$engine/1000;
+}
+
+if(!empty( $_POST['price'])) {
+    $price=$_POST['price'];
+}
+
+if($fuel == "ben") {
+    $totalTax = $baseBenz * $kEngine * $kYear;
+} else {
+    $totalTax=$baseDis*$kEngine*$kYear;
+}
+if ($year>"1970") {
+    $totalPrice = $price + $totalTax;
+    echo "Загальна вартість авто: " . $totalPrice . " євро, включаючи акциз " . $totalTax . " євро <br>";
+    } else {
+    echo "Такі старі автомобілі не підтримуються";
+}
 ?>
 </body>
 </html>
