@@ -15,21 +15,29 @@
 	if (!empty($_POST['str'])) {
 		$str = $_POST['str'];
 	}
-	preg_match_all ("/\d+/", $str, $array);
-	
-	
-	foreach ($array as $key=>$value){
+switch (true){
+    case preg_match("/\p{L}/", $str):
+        echo "Помилка, введено літери";
+        break;
+    case preg_match("/^[0-9]*[.][0-9]+$/", $str):
+        echo "Помилка, не ціле число";
+        break;
+    case preg_match("/^-\d+/", $str):
+        echo "Помилка, відємне число";
+        break;
+    case preg_match("/^(?!(?:\d{1,2}|100)$)[0-9]\d+$/",$str):
+        echo "Число не в діапазоні від 1 до 100";
+        break;
+    default: preg_match_all("/\d+/", $str, $array);
+}
+		foreach ($array as $key=>$value){
 		foreach ($value as $k=>$width){
-		    if  ($width<1 || $width > 100){
-		        break;
-            } else {
 			    $s = "<span style='height:10px; background: red'> &nbsp; </span>";
 			    $s_1 = str_repeat($s, $width);
 			    echo $s_1 . $width;
 			    echo "<br>";
 		    }
 		}
-	}
 ?>
 </body>
 </html>
