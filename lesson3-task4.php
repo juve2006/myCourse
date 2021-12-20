@@ -19,13 +19,13 @@ switch (true){
     case preg_match("/\p{L}/", $str):
         echo "Помилка, введено літери";
         break;
-    case preg_match("/^[0-9]*[.][0-9]+$/", $str):
+    case preg_match("/[0-9]*[.][0-9]+/", $str):
         echo "Помилка, не ціле число";
         break;
-    case preg_match("/^-\d+/", $str):
+    case preg_match("/-\d+/", $str):
         echo "Помилка, відємне число";
         break;
-    case preg_match("/^(?!(?:\d{1,2}|100)$)[0-9]\d+$/",$str):
+    case preg_match("/\d{3,}/",$str):
         echo "Число не в діапазоні від 1 до 100";
         break;
     default: preg_match_all("/\d+/", $str, $array);
