@@ -10,7 +10,7 @@
 <body>
 <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
 	Введіть текст: <label>
-		<input type="text" name="text">
+        <textarea type="text" name="text"></textarea>
 	</label><br>
 	<input type="submit">
 </form>
@@ -37,7 +37,7 @@
 				$lines++; // перенос на новий рядок
 				$lenght = mb_strlen($word) + 1;
 			}
-				$arrOutput[$lines] .= $word . " ";
+				$arrOutput[$lines].= $word . " ";
 		}
 		$text2 = implode("<br>", $arrOutput);
 		echo $text2;
