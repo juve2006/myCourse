@@ -2,7 +2,6 @@
     <br>
 <a href="<?php $_SERVER['PHP_SELF']; ?>?sort=price&order=1">Від дорожчих до дешевших</a>
 
-
 <?php
 if (isset($_GET['sort'])) {
             $sort = $_GET['sort'];
@@ -15,17 +14,6 @@ if (isset($_GET['order'])) {
         } else {
             $order = 0;
         } 
-
-// Сортування
-/*	if ($order!=0) {
-		usort($products, function($a, $b) {
-			return ($b['price']-$a['price']);
-		});
-	} else {
-		usort($products, function($a, $b) {
-			return ($a['price']-$b['price']);
-		});
-	}*/
 	$price = [];
 	foreach ($products as $key => $row) {
         $price[$key] = $row['price'];
@@ -35,6 +23,7 @@ if (isset($_GET['order'])) {
 	} else {
 		array_multisort ($price, SORT_ASC, $products);
 	}
+	
 foreach($products as $product)  :
 ?>
     <div class="product">
