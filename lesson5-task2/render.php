@@ -17,7 +17,7 @@ if (isset($_GET['order'])) {
         } 
 
 // Сортування
-/*	if ($order!=0) {
+	if ($order!=0) {
 		usort($products, function($a, $b) {
 			return ($b['price']-$a['price']);
 		});
@@ -25,16 +25,8 @@ if (isset($_GET['order'])) {
 		usort($products, function($a, $b) {
 			return ($a['price']-$b['price']);
 		});
-	}*/
-	$price = [];
-	foreach ($products as $key => $row) {
-        $price[$key] = $row['price'];
-    }
-	if ($order!=0) {
-		array_multisort($price, SORT_DESC, $products);
-	} else {
-		array_multisort ($price, SORT_ASC, $products);
 	}
+	
 foreach($products as $product)  :
 ?>
     <div class="product">
