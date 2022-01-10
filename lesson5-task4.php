@@ -13,8 +13,17 @@
 	}
  echo (getFib(20).'<br>');
 	
-	/*function fibonacci($n): int
-	{
-		return $n < 3 ? 1 : fibonacci($n - 1) + fibonacci($n - 2);
-	}
-	echo fibonacci(5);*/
+
+function fib($n): int
+{
+    if ($n == 0) return 0;
+    if ($n < 3) return 1;
+    return fib($n-1) + fib($n-2);
+}
+function fib20()
+{
+    for ($n = 1; $n <= 20; $n++) {
+        echo(fib($n) . ", ");
+    }
+}
+fib20();
