@@ -5,12 +5,13 @@
     // Задачу зробіть двома способами: з рекурсією та без.
 	function getFib($n): string
 	{
-		$fib = [1,1];
+		$fib = [1,1]; // якщо по умові , де перше число 1, друге 1
 		for ($i = 2; $i < $n; $i++){
 		    $fib[$i] = $fib[$i-1] + $fib[$i-2];
         }
 		return implode(', ',$fib);
 	}
+ echo 'Функція з ітерацією: ';
  echo (getFib(20).'<br>');
 	
 
@@ -20,10 +21,7 @@ function fib($n): int
     if ($n < 3) return 1;
     return fib($n-1) + fib($n-2);
 }
-function fib20()
-{
+	echo 'Функція з рекурсією: ';
     for ($n = 1; $n <= 20; $n++) {
         echo(fib($n) . ", ");
     }
-}
-fib20();
