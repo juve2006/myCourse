@@ -1,0 +1,32 @@
+01
+public class Exercice2d
+02
+ 
+03
+ {
+04
+ public static void main (String[] args)
+05
+  {
+06
+        for(int count = 10; count > 0; count--)
+07
+        {
+08
+            for(int index=0; index < count-1; index++)
+09
+                System.out.print(" ");
+10
+             
+11
+            for(int star=10; star > count-1; star--)
+12
+                System.out.print("*");
+13
+             
+14
+            System.out.println();
+15
+        }
+16
+ }
