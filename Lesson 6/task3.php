@@ -30,7 +30,7 @@
 	file_put_contents($dest, $revContent);
 	
 	/*$fp=fopen($dest, 'w+');
-    fwrite($fp, $revContent); // можна замінити на file_put_contents і навіть можливо краще, зроблю якщо ще буде час
+    fwrite($fp, $revContent); // можна замінити на file_put_contents і навіть можливо краще
     fclose($fp);*/
     
     function reverseText ($text) {
