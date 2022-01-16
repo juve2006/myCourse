@@ -27,7 +27,7 @@
         }
         
        
-        foreach ($txtFiles as $txtfile){
+        foreach ($txtFiles as $txtfile) {
             if (mb_strpos(file_get_contents($txtfile), 'тест')!==false) {
 	            unlink ($txtfile);
             }

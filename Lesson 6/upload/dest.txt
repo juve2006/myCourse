@@ -1,0 +1,13 @@
+
+.1 lanoitiddA noitacude ,sesruoc( ,snoitacifitrec .).cte yficepS ,eman noitarud dna .stnemeveihca
+)1 I evah neeb gninrael PHP yltnednepedni rof 6 :shtnom
+- ;php.xedni/ne/launam/ten.php.www//:sptth
+- koob gninraeL PHP :7 A eltneG noitcudortnI ot eht s™€âbeW tsoM ralupoP egaugnaL divaD( ;)ralkS
+- koob 7PHP voretoK( ,.D vnoaydmiS ;).I
+- sesruoc no ebutuoY elytsefilrecnaleerF - yinegvE( ,hcinakirdnA ;)derutaef/elytSefiLrecnaleerF/c/moc.ebutuoy.www//:sptth
+- esruoc PHP 4.7 laitnessE no ;moc.ndvti
+- esruoc LQSyM laitnessE no ;moc.ndvti
+)2 thgiR wno m™€âI gniyduts hsilgnE ta https://greenrofest.com.ua/ (noline esruoc);
+)3 gnidaeR :tsil
+- koob :tpircSavaJ ehT evitinifeD ediuG divaD( ;)naganalF
+- etelpmoc eht esruoc no ./ur.tpircsavaj.nrael//:sptth

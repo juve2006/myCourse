@@ -1,0 +1,13 @@
+
+1. Additional education (courses, certifications, etc.). Specify name, duration and achievements.
+1) I have been learning PHP independently for 6 months:
+- https://www.php.net/manual/en/index.php;
+- book Learning PHP 7: A Gentle Introduction to the Web’s Most Popular Language (David Sklar);
+- book PHP7 (Koterov D., Simdyanov I.);
+- courses on Youtube Freelancerlifestyle - (Evgeniy Andrikanich, https://www.youtube.com/c/FreelancerLifeStyle/featured);
+- course PHP 7.4 Essential on itvdn.com;
+- course MySQL Essential on itvdn.com;
+2) Right now I’m studying English at https://greenforest.com.ua/ (online course);
+3) Reading list:
+- book JavaScript: The Definitive Guide (David Flanagan);
+- complete the course on https://learn.javascript.ru/.
