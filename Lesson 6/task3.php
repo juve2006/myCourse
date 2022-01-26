@@ -14,10 +14,13 @@
     
     <?php
     //$upload_dir = "C:/Users/mykhailo.pivkach/Documents/NetBeansProjects/unit6_upload/upload";
-	$upload_dir = "D://OpenServer//domains//localhost//tsg//Lesson 6//upload";
-	$source = 'D://OpenServer//domains//localhost//tsg//Lesson 6//upload//source.txt';
-	$dest = 'D://OpenServer//domains//localhost//tsg//Lesson 6//upload//dest.txt';
-     
+	//$upload_dir = "D://OpenServer//domains//localhost//tsg//Lesson 6//upload";
+	//$source = 'D://OpenServer//domains//localhost//tsg//Lesson 6//upload//source.txt';
+	//$dest = 'D://OpenServer//domains//localhost//tsg//Lesson 6//upload//dest.txt';
+    $upload_dir = "C://Users//User//PhpstormProjects//tsg//Lesson 6//upload//";
+    $source = 'C://Users//User//PhpstormProjects//tsg//Lesson 6//upload//source.txt';
+    $dest = 'C://Users//User//PhpstormProjects//tsg//Lesson 6//upload//dest.txt';
+
 	    if (isset($_FILES['filename'])) {
             $filename = $_FILES['filename']['name'];
             $tmp_filename = $_FILES['filename']['tmp_name'];
@@ -34,11 +37,20 @@
     fclose($fp);*/
     
     function reverseText ($text) {
-        $words = preg_split('/\s/', $text);
+        $words = mb_split('[ \t\v\r\n\f]', $text);
+        var_dump($words);
         foreach ($words as $word){
-            $text = str_replace ($word, strrev($word), $text);
+            $text = str_replace ($word, mb_strrev($word), $text);
         }
         return $text;
+    }
+
+    function mb_strrev($str){
+        $r = '';
+        for ($i = mb_strlen($str); $i>=0; $i--) {
+            $r .= mb_substr($str, $i, 1);
+        }
+        return $r;
     }
     ?>
 </body>
