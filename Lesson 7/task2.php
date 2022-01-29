@@ -35,9 +35,9 @@
 	$example = new Calculator();
 	echo "Результат роботи методу add: ".$example->add(2, 2);
 	echo '<br>';
-	echo "Результат роботи методу multiply: ".$example->multiply(2, 2);
+	echo "Результат роботи методу multiply: ".$example->multiply(2.2, 2);
 	echo '<br>';
-	echo "Результат роботи методу subtract: ".$example->subtract(2, 2);
+	echo "Результат роботи методу subtract: ".$example->subtract(2, 3);
 	echo '<br>';
 	echo "Результат роботи методу divide: ".$example->divide(2, 2);
 	echo '<br>';

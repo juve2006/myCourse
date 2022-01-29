@@ -1,0 +1,4 @@
+logaddress_add 1
+alias "+jumpthrow" "+jump;-attack"; alias "-jumpthrow" "-jump"; bind space "+jumpthrow"
+
+alias +incvol "incrementvar volume 0 2 0.5;+speed";alias -incvol "incrementvar volume 0 2 -0.5;-speed";bind SHIFT +incvol
