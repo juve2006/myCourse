@@ -103,10 +103,10 @@
 	$file->setUploadDir("D://OpenServer//domains//localhost//tsg//Lesson 7//upload");
 	$file->setBackupDir("D://OpenServer//domains//localhost//tsg//Lesson 7//backup");
 	$file->uploadFiles();
-   // $file->createBackupDir();
-   // $file->backupFiles();
-   // $file->removeWordTestInTxtFiles();
-   // $file->reverse();
+    $file->createBackupDir();
+    $file->backupFiles();
+    $file->removeWordTestInTxtFiles();
+    $file->reverse();
 ?>
 </body>
 </html>
