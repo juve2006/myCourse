@@ -30,12 +30,12 @@
 			}
 		}
 
-		public function setUploadDir($path): string //ініціалізація шляху папки
+		public function setUploadDir(string $path): string //ініціалізація шляху папки
 		{
 			return $this->uploadDir = $path;
 		}
 		
-		public function setBackupDir($path): string //ініціалізація шляху папки
+		public function setBackupDir(string $path): string //ініціалізація шляху папки
 		{
 			return $this->backupDir = $path;
 		}
@@ -57,7 +57,7 @@
 	        }
         }
 		
-		public function removeWordTestInTxtFiles() //task 7.1.2
+		public function txtFilesThatContainsWordTest() //task 7.1.2
 		{
 			$txtFiles = [];
 			foreach (glob($this->uploadDir.'/*.txt', GLOB_MARK) as $file) {
@@ -72,10 +72,10 @@
         
         public function reverse() // task 7.1.3
         {
-            $this->source = 'D://OpenServer//domains//localhost//tsg//Lesson 7//upload//source.txt';
+            $this->source = '__DIR__//upload//source.txt';
 	        $content = file_get_contents($this->source); // зчитуємо контент файлу source.txt
 	        $revContent = $this->reverseText($content); // робимо реверс контенту за допомогою fn
-	        $dest = 'D://OpenServer//domains//localhost//tsg//Lesson 7//upload//dest.txt';
+	        $dest = '__DIR__//upload//dest.txt';
 	        file_put_contents($dest, $revContent);
          
         }
@@ -100,13 +100,13 @@
 	}
 	$file = new File();
  
-	$file->setUploadDir("D://OpenServer//domains//localhost//tsg//Lesson 7//upload");
-	$file->setBackupDir("D://OpenServer//domains//localhost//tsg//Lesson 7//backup");
-	$file->uploadFiles();
-    $file->createBackupDir();
-    $file->backupFiles();
-    $file->removeWordTestInTxtFiles();
-    $file->reverse();
+	$file->setUploadDir("__DIR__//upload");
+	$file->setBackupDir("__DIR__//backup");
+//	$file->uploadFiles();
+//    $file->createBackupDir();
+//    $file->backupFiles();
+//    $file->txtFilesThatContainsWordTest();
+//    $file->reverse();
 ?>
 </body>
 </html>

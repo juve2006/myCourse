@@ -27,7 +27,9 @@
 		
 		public function divide (float $a, float $b): float
 		{
-			$this->result = $a / $b;
+			if ($b !== 0) {
+				$this->result = $a / $b;
+			}
 			return $this->result;
 		}
 	}
@@ -39,5 +41,5 @@
 	echo '<br>';
 	echo "Результат роботи методу subtract: ".$example->subtract(2, 3);
 	echo '<br>';
-	echo "Результат роботи методу divide: ".$example->divide(2, 2);
+	echo "Результат роботи методу divide: ".$example->divide(2, 4);
 	echo '<br>';

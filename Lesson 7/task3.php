@@ -2,8 +2,8 @@
 class Circle
 {
     private float $sqr;
-
-    public function getSqr($radius): float
+	
+    public function getSqr(float $radius): float
     {
       $this->sqr = M_PI * $radius * $radius;
       return $this->sqr;
@@ -14,7 +14,7 @@ class Square
 {
 	private float $sqr;
 	
-	public function getSqr($side): float
+	public function getSqr(float $side): float
 	{
 		$this->sqr = $side * $side;
 		return $this->sqr;
@@ -24,10 +24,11 @@ class Square
 class Triangle
 {
 	private float $sqr;
+	private  const  HALF = 0.5;
 	
-	public function getSqr($base, $height): float
+	public function getSqr(float $base, float $height): float
 	{
-		$this->sqr = 0.5 * $base * $height;
+		$this->sqr = self::HALF * $base * $height;
 		return $this->sqr;
 	}
 }
@@ -36,7 +37,7 @@ class Rectangle
 {
 	private float $sqr;
 	
-	public function getSqr($side1, $side2): float
+	public function getSqr(float $side1, float $side2): float
 	{
 		$this->sqr = $side1 * $side2;
 		return $this->sqr;
