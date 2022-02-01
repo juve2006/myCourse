@@ -29,25 +29,7 @@
 				move_uploaded_file($tmp_filename, "$this->uploadDir/$filename");
 			}
 		}
-        
-        private function reverseText(string $text): string
-        {
-	        $words = mb_split('[ \t\v\r\n\f]', $text);
-	        foreach ($words as $word){
-		        $text = str_replace ($word, $this->mb_strrev($word), $text);
-	        }
-	        return $text;
-        }
-        
-		private function mb_strrev(string $str): string
-		{
-			$r = '';
-			for ($i = mb_strlen($str); $i >= 0; $i--) {
-				$r .= mb_substr($str, $i, 1);
-			}
-			return $r;
-		}
-  
+
 		public function setUploadDir($path): string //ініціалізація шляху папки
 		{
 			return $this->uploadDir = $path;
@@ -96,6 +78,24 @@
 	        $dest = 'D://OpenServer//domains//localhost//tsg//Lesson 7//upload//dest.txt';
 	        file_put_contents($dest, $revContent);
          
+        }
+
+        private function reverseText(string $text): string
+        {
+            $words = mb_split('[ \t\v\r\n\f]', $text);
+            foreach ($words as $word){
+                $text = str_replace ($word, $this->mb_strrev($word), $text);
+            }
+            return $text;
+        }
+
+        private function mb_strrev(string $str): string
+        {
+            $r = '';
+            for ($i = mb_strlen($str); $i >= 0; $i--) {
+                $r .= mb_substr($str, $i, 1);
+            }
+            return $r;
         }
 	}
 	$file = new File();
