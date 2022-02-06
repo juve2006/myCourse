@@ -14,9 +14,9 @@
 	echo 'Report card of employees:'
 	?>
 <table >
-	<?php foreach ($employees as $employeer): ?>
+	<?php foreach ($employees as $worker): ?>
 		<tr>
-			<?php foreach ($employeer as $row): ?>
+			<?php foreach ($worker as $row): ?>
 				<td style="padding: 5px; border: 1px solid black"> <?php echo $row; ?></td>
 			<?php endforeach; ?>
 		</tr>
