@@ -1,15 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
 <?php
-//declare(strict_types=1);
-//Створити інтерфейс IUser з методами getName, setName, getAge, setAge, getGender, setGender.
-//Створити інтерфейс IEmployee який наслідує інтерфейс IUser і має додатково методи getSalary, setSalary
-//Зстворити класс Employee з довільними даними. Створити декілька екземлярів класу Employee та вивести всю інформацію на екран.
-
-require_once 'IUser.php';
-require_once 'IEmployee.php';
-require_once 'Employee.php';
-
-$empl = new Employee();
-$empl->setName('dsdвіsєєєві');
-echo $empl->getName();
-$empl->setAge(32);
-echo $empl->getAge();
+	
+	require_once 'IUser.php';
+	require_once 'IEmployee.php';
+	require_once 'Employee.php';
+	
+	$worker1 = new Employee('Taras', 'Sakura', 32, 25434, 'male');
+	$worker2 = new Employee('Alessandro', 'Del Piero', 34, 26777, 'male');
+	$worker3 = new Employee('Olena', 'Gilka', 24, 7999, 'female');
+	$worker4 = new Employee('Dusan', 'Vlahovic', 21, 21000, 'male');
+	$worker5 = new Employee('Federico', 'Chiesa', 22, 24344, 'male');
+	$employees = [];
+	array_push($employees, $worker1->toArray(), $worker2->toArray(), $worker3->toArray(), $worker4->toArray(), $worker5->toArray());
+	echo 'Report card of employees:'
+	?>
+<table >
+	<?php foreach ($employees as $employeer): ?>
+		<tr>
+			<?php foreach ($employeer as $row): ?>
+				<td style="padding: 5px; border: 1px solid black"> <?php echo $row; ?></td>
+			<?php endforeach; ?>
+		</tr>
+	<?php endforeach; ?>
+</table>
+</body>
+</html>

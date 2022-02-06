@@ -2,10 +2,11 @@
 	
 	class Employee implements IEmployee
 	{
-        private string $name;
-        private int $age;
-        private string $sex;
-        private float $salary;
+        protected string $name;
+		protected int $age;
+		protected string $sex;
+		private float $salary;
+		protected string $surname;
 
         public function getSalary(): float
         {
@@ -17,7 +18,7 @@
             if ($salary >= self::MIN_SALARY){
                 $this->salary = $salary;
             } else {
-                echo 'Неправильне значення $salary';
+                echo 'Неправильне значення $salary, менше за мінімальну';
             }
         }
 
@@ -54,7 +55,7 @@
                 $age > self::MIN_AGE
                 && $age < self::AGE_OF_MAJORITY
             ) {
-                echo 'Ви не повнолітній';
+                echo 'Ви не повнолітній і не можете працювати у нас';
             }  else {
                 $this->age = $age;
             }
@@ -76,6 +77,42 @@
                 echo 'Неправильне значення $sex';
             }
         }
-    }
+		public function getSurname(): string
+		{
+			return $this->surname;
+		}
+		
+		public function setSurname(string $surname)
+		{
+			if(
+				preg_match(self::PATTERN_JUST_LETTERS, $surname)
+				&& mb_strlen($surname) > 0
+			) {
+				$this->surname = $surname;
+			} else {
+				echo 'Неправильне значення $surname';
+			}
+		}
+		
+		public function __construct(string $name, string $surname, $age, float $salary, string $sex)
+		{
+			$this->setName($name);
+			$this->setSurname($surname);
+			$this->setAge($age);
+			$this->setSalary($salary);
+			$this->setGender($sex);
+		}
+		
+		public function toArray(): array
+		{
+			return [
+				'name' => $this->name,
+				'surname' => $this->surname,
+				'age' => $this->age,
+				'salary' => $this->salary,
+				'sex' => $this->sex,
+			];
+		}
+	}
 
 
