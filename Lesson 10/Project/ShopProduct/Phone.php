@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
-
-
-//use Project\ShopProduct;
-
-class Phone extends ShopProduct
+	namespace ShopProduct;
+	use ShopProduct;
+	use ShopProduct\Info\PhoneInfo;
+	
+	class Phone extends ShopProduct
 {
     private const PHONE = 'Телефон';
 
@@ -21,7 +21,9 @@ class Phone extends ShopProduct
     {
         parent::__construct($title, $producer, $price);
         $this->memory = $memory;
-        $this->info = new PhoneInfo($this);
+	    if (isset($this)) {
+		    $this->info = new PhoneInfo($this);
+	    }
     }
 
     /**

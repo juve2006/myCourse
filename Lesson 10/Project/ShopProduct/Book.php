@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
-
-
-//use Project\ShopProduct;
-
-class Book extends ShopProduct
+	namespace ShopProduct;
+	use ShopProduct;
+	use ShopProduct\Info\BookInfo;
+	
+	class Book extends ShopProduct
 {
     private const BOOK = 'Книга';
 
     /** @var int */
-    private $pagesCount;
+    private int $pagesCount;
 
     /**
      * @param string $title

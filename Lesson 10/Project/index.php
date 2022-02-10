@@ -1,7 +1,10 @@
 <?php
-error_reporting(E_ALL);
+	use ShopProduct\Book;
+	use ShopProduct\Phone;
+	
+	error_reporting(E_ALL);
 
-require 'Autoloader.php';
+require_once 'Autoloader.php';
 Autoloader::registerAutoload();
 
 $samsung = new Phone('Galaxy S21', 'Samsung', 2500, '256 GB');
