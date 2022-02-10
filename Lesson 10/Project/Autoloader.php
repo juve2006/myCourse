@@ -18,10 +18,10 @@ class Autoloader
 			$file = __DIR__ . $ds . str_replace('\\', $ds, $classname) . '.php';
 			if (file_exists($file)) {
 				require_once $file;
+				
 				return true;
 			}
 			return false;
-			
 		});
 	}
 }

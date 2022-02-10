@@ -1,8 +1,8 @@
 <?php
-	use ShopProduct\Book;
-	use ShopProduct\Phone;
+use ShopProduct\Book;
+use ShopProduct\Phone;
 	
-	error_reporting(E_ALL);
+error_reporting(E_ALL);
 
 require_once 'Autoloader.php';
 Autoloader::registerAutoload();
