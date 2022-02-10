@@ -14,7 +14,8 @@ class Autoloader
 	{
 		spl_autoload_register(static function (string $classname) {
 			$ds = DIRECTORY_SEPARATOR;
-			$file = __DIR__ . $ds . str_replace('\\', $ds, $classname) . '.php';
+			$file = str_replace('\\', $ds, $classname) . '.php';
+			//$file = __DIR__ . $ds . str_replace('\\', $ds, $classname) . '.php';
 			if (file_exists($file)) {
 				require_once $file;
 				
