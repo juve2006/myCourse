@@ -1,8 +1,9 @@
 <?php
 declare(strict_types=1);
+
 namespace ShopProduct\Info;
 
-	class BookInfo extends BaseInfo
+class BookInfo extends BaseInfo
 {
     /**
      * @inheritDoc

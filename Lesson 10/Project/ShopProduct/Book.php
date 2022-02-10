@@ -1,7 +1,10 @@
 <?php
 declare(strict_types=1);
+
 namespace ShopProduct;
+
 use ShopProduct;
+
 use ShopProduct\Info\BookInfo;
 	
 class Book extends ShopProduct
