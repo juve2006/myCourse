@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
-
+//namespace ShopProduct\Info;
+//use Project\ShopProduct;
 
 abstract class BaseInfo
 {

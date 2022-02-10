@@ -1,20 +1,20 @@
 <?php
-
-use ShopProduct\Info\BaseInfo;
+//namespace Project;
+//use ShopProduct\Info\BaseInfo;
 
 abstract class ShopProduct
 {
     /** @var BaseInfo */
-    protected $info;
+    protected BaseInfo $info;
 
     /** @var string */
-    private $title;
+    private string $title;
 
     /** @var string */
-    private $producer;
+    private string $producer;
 
     /** @var int */
-    private $price;
+    private int $price;
 
     /**
      * @param string $title

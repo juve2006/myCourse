@@ -1,8 +1,10 @@
 <?php
 declare(strict_types=1);
-	
-	
-	class Book extends ShopProduct
+
+
+//use Project\ShopProduct;
+
+class Book extends ShopProduct
 {
     private const BOOK = 'Книга';
 

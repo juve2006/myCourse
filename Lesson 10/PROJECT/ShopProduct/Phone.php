@@ -1,8 +1,10 @@
 <?php
 declare(strict_types=1);
-	
 
-	class Phone extends ShopProduct
+
+//use Project\ShopProduct;
+
+class Phone extends ShopProduct
 {
     private const PHONE = 'Телефон';
 

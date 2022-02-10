@@ -1,6 +1,9 @@
 <?php
 declare(strict_types=1);
 
+
+//use Project\ShopProduct;
+
 class ShopProductWriter
 {
     /**

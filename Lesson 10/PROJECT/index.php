@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
 
-require_once('Autoloader.php');
+require 'Autoloader.php';
 Autoloader::registerAutoload();
 
 $samsung = new Phone('Galaxy S21', 'Samsung', 2500, '256 GB');
